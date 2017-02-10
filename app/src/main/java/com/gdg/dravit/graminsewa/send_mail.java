@@ -23,7 +23,7 @@ public class send_mail extends AppCompatActivity {
         String to= "contact@graminseva.com";
         String sub= et2.getText().toString();
         String body= et3.getText().toString();
-        Intent email = new Intent(Intent.ACTION_SEND);
+        Intent email = new Intent(Intent.ACTION_SENDTO);
         email.putExtra(Intent.EXTRA_USER,to);
         email.putExtra(Intent.EXTRA_SUBJECT,sub);
         email.putExtra(Intent.EXTRA_TEXT,body);
