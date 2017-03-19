@@ -13,29 +13,69 @@
 
     <Button
         android:text="dictionary"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:id="@+id/b_dictionary"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:text="send mail"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/send_mail"
         android:layout_below="@+id/b_dictionary"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/b_hn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
-        android:id="@+id/send_mail" />
+        android:layout_marginTop="0dp"
+        android:id="@+id/b_noti" />
 
     <Button
         android:text="helpline numbers"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
         android:id="@+id/b_hn"
         android:layout_below="@+id/send_mail"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="scan qr code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/qrcode"
+        android:layout_below="@+id/b_noti"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/scan_qr_code"
+        android:text="scan qr code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/qrcode"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scan_qr_code"
+        android:text="locate me"/>
+
+    <Button
+        android:id="@+id/updated_location"
+        android:text="get updated location"
+        android:layout_below="@id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

@@ -16,13 +16,7 @@ public class main_dict extends AppCompatActivity {
         setContentView(R.layout.activity_main_dict);
         search = (ImageButton) findViewById(R.id.ib_main_search);
         fav = (ImageButton) findViewById(R.id.ib_main_fav);
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(main_dict.this,f_dictionary.class);
-                startActivity(i);
-            }
-        });
+
         fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

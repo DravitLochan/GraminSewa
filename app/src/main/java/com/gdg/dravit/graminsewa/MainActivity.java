@@ -1,10 +1,13 @@
 package com.gdg.dravit.graminsewa;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,5 +42,40 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button qrcode;
+        qrcode= (Button) findViewById(R.id.qrcode);
+        qrcode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,QRCodeScanner.class));
+            }
+        });
+
+        Button scan;
+        scan= (Button) findViewById(R.id.scan_qr_code);
+        scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ScanQR.class));
+            }
+        });
+
+        Button location;
+        location= (Button) findViewById(R.id.location);
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Locate.class));
+            }
+        });
+
+        Button updateLocation;
+        updateLocation = (Button) findViewById(R.id.updated_location);
+        updateLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,UpdatedLocation.class));
+            }
+        });
     }
 }
