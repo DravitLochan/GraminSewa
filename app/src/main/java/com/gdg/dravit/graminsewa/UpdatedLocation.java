@@ -14,14 +14,17 @@ import android.widget.TextView;
 import android.location.*;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class UpdatedLocation extends AppCompatActivity {
 
     TextView timeUpdated, latitude, longitude, details;
     Button getUpdate;
-
+    Geocoder geocoder;
     LocationManager locationManager;
     LocationListener locationListener;
 
@@ -35,7 +38,7 @@ public class UpdatedLocation extends AppCompatActivity {
         longitude = (TextView) findViewById(R.id.longitude);
         latitude = (TextView) findViewById(R.id.latitude);
         details= (TextView) findViewById(R.id.details);
-
+        geocoder=new Geocoder(this, Locale.getDefault());
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         locationListener = new LocationListener() {
             @Override
@@ -48,7 +51,12 @@ public class UpdatedLocation extends AppCompatActivity {
                 timeUpdated.setText("time : "+sDate + "");
                 longitude.setText("longitude : "+location.getLongitude() + "");
                 latitude.setText("latitude : "+location.getLatitude() + "");
-                details.setText(""+location.getExtras());
+                try {
+                    List<Address> add= geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
+                    details.setText(add.get(0).getLocality()+"\n"+add.get(0).getAddressLine(0)+"\n"+add.get(0).getFeatureName());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 Toast.makeText(getApplicationContext(), "test123", Toast.LENGTH_SHORT).show();
             }
 
